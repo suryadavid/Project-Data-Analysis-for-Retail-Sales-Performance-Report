@@ -1,0 +1,8 @@
+SELECT
+EXTRACT(YEAR FROM order_date) AS years,
+SUM(sales) AS sales,
+count(distinct order_id) as number_of_order
+from dqlab_sales_store
+where order_status = 'Order Finished'
+group by 1
+order by 1
